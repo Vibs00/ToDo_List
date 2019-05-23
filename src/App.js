@@ -41,7 +41,7 @@ class App extends React.Component{
 
   printValue = () =>{
     let arr = [];
-    arr = this.state.detail.map((value) => <List value={value} setFlag={()=>this.setFlag(value)} deleteList={()=>this.deleteList(value)}></List>);
+    arr = this.state.detail.map((value) => <List value={value} setFlag={()=>this.setFlag(value)} deleteList={()=>this.deleteList(value)} moveUp={()=>this.moveUp(value)} moveDown={()=>this.moveDown(value)}></List>);
     return arr;       
   }
 
@@ -81,6 +81,40 @@ class App extends React.Component{
     });
   }
 
+  countStatus = () =>{
+    let count = 0;
+    this.state.detail.forEach((value, index)=>{
+        if(value.flag == true){
+          ++count;
+        }
+    })
+    return count;
+  }
+
+  moveUp = (val) =>{
+    let ind = this.state.detail.indexOf(val);
+    let p = this.state.detail;
+    if(ind != 0)
+    {
+      [p[ind], p[ind-1]] = [p[ind-1], p[ind]];
+      this.setState({
+        detail : p
+      });
+    }
+  }
+
+  moveDown =(val) =>{
+    let ind = this.state.detail.indexOf(val);
+    let p = this.state.detail;
+    if(ind != (this.state.detail.length-1))
+    {
+      [p[ind], p[ind+1]] = [p[ind+1], p[ind]];
+      this.setState({
+        detail : p
+      });
+    }
+  }
+
   keyPress = (e) =>{
     if(e.key == 'Enter'){
       this.setValue();
@@ -92,7 +126,7 @@ class App extends React.Component{
     return (
       <div>
         <h1 className="row flex-center">Dynamic List</h1>
-        <h4 className="row flex-center">Number of items: {this.state.detail.length}</h4>
+        <h4 className="row flex-center">Completed Tasks: {this.countStatus() + "/" + this.state.detail.length}</h4>
         <input type="text" className="row flex-center" onChange={this.getValue} onKeyDown={this.keyPress} value={this.state.i.name}></input>
         <button className="row flex-center" onClick={this.setValue}>CLICK</button>
         <ul>
@@ -115,8 +149,8 @@ class List extends React.Component{
       <li onClick={(e)=>this.props.setFlag(this.props.value)} className={this.props.value.styl}>
           {this.props.value.name}
       </li>
-      <button>up</button>
-      <button>down</button>
+      <button onClick={()=>this.props.moveUp(this.props.value)}>up</button>
+      <button onClick={()=>this.props.moveDown(this.props.value)}>down</button>
       <button onClick={()=>this.props.deleteList(this.props.value)}>delete</button>
       </span>
       );
