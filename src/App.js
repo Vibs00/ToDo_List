@@ -2,6 +2,7 @@ import React from 'react';
 //import './../node_modules/bootstrap/dist/css/bootstrap.css'
 import './paper.css';
 import './App.css';
+//import List from './Connect.js'
 
 class App extends React.Component{
   constructor(props){
@@ -40,7 +41,7 @@ class App extends React.Component{
 
   printValue = () =>{
     let arr = [];
-    arr = this.state.detail.map((value) => <li onClick={(e)=>this.setFlag(value)} className={value.styl/*value.flag ? "paper-btn btn-block alert-success" : "paper-btn btn-block"*/}>{value.name}</li>);
+    arr = this.state.detail.map((value) => <List value={value} setFlag={(e)=>this.setFlag(value)}></List>);
     return arr;       
   }
 
@@ -91,6 +92,21 @@ class App extends React.Component{
       </div>
     );
   }
+}
+
+class List extends React.Component{
+
+  constructor(props){
+      super(props);
+  }
+
+  render(){
+  return(
+      <li onClick={(e)=>this.props.setFlag(this.props.value)} className={this.props.value.styl}>
+          {this.props.value.name}
+      </li>);
+  }
+
 }
 
 export default App;
