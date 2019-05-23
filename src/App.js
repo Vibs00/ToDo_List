@@ -41,7 +41,7 @@ class App extends React.Component{
 
   printValue = () =>{
     let arr = [];
-    arr = this.state.detail.map((value) => <List value={value} setFlag={(e)=>this.setFlag(value)}></List>);
+    arr = this.state.detail.map((value) => <List value={value} setFlag={()=>this.setFlag(value)} deleteList={()=>this.deleteList(value)}></List>);
     return arr;       
   }
 
@@ -70,6 +70,15 @@ class App extends React.Component{
         detail : h
       })
     }
+  }
+
+  deleteList = (val) =>{
+    let ind = this.state.detail.indexOf(val);
+    let p = this.state.detail;
+    p.splice(ind, 1);
+    this.setState({
+      detail : p
+    });
   }
 
   keyPress = (e) =>{
@@ -102,9 +111,15 @@ class List extends React.Component{
 
   render(){
   return(
+    <span>
       <li onClick={(e)=>this.props.setFlag(this.props.value)} className={this.props.value.styl}>
           {this.props.value.name}
-      </li>);
+      </li>
+      <button>up</button>
+      <button>down</button>
+      <button onClick={()=>this.props.deleteList(this.props.value)}>delete</button>
+      </span>
+      );
   }
 
 }
