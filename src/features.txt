@@ -1,0 +1,33 @@
+1)  If new Date() is added in getValue() the time will be
+    saved when the last render is done not when the task is typed
+    i.e when button is clicked or enter is pressed.
+
+
+2)  On clicking ADD without adding even the first element will not result in an error
+    of cannot apply trim() function to undifined string.
+
+3)  Can also press Enter key to add task just like clicking ADD button.
+
+4)  Pined tasks are shown in blue colour.
+
+5)  If pined a task by mistake doubliclicking on it will remove th pin,
+    and will place the task at the end of the list.
+
+6)  The left list shows all the tasks(completed, not completed, pined and added). 
+    completed tasks are shown also in the right list.
+
+7)  Ordering by Name is case insensitive i.e apple, Apple, ApPlE etc. will be treated the same.
+
+8)  Tasks starting with number will be treated as higher priority and will be placed on top of
+    tasks starting with alphabet.
+
+9)  The tasks will look the same no matter how long the task string is i.e CSS will work
+    flowlessly for any length of the task (the task card will reflow and adjust it's length).
+
+10) Animation :
+        i) On adding a new task the task will fill colour.
+        ii) On deleting a task the task just below it will fill colour.
+
+
+All 5 basic tasks done!!
+First 5 Additional tasks + progress bar added !!
