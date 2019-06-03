@@ -1,27 +1,32 @@
-.App {
-  text-align: center;
+.sticky{
+  position: sticky;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
-  pointer-events: none;
+/* input[type="text"] {
+  font-size: 0px;
+} */
+
+::-webkit-input-placeholder {
+  color: rgb(121, 65, 65);
+  font-size: 18px;
+}
+::-moz-placeholder {
+  color: rgb(121, 65, 65);
+  font-size: 18px;
+}
+:-ms-input-placeholder {
+  color: rgb(121, 65, 65);
+  font-size: 18px;
+}
+::placeholder {
+  color: rgb(121, 65, 65);
+  font-size: 18px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
+/* .up{
+  em em-arrow_down
+} */
 
-.App-link {
-  color: #61dafb;
-}
 
 @keyframes App-logo-spin {
   from {
@@ -30,4 +35,461 @@
   to {
     transform: rotate(360deg);
   }
+}
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Dropdown Button */
+.dropbtn {
+  background-color: #3498DB;
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+}
+
+/* Dropdown button on hover & focus */
+.dropbtn:hover, .dropbtn:focus {
+  background-color: #2980B9;
+}
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {background-color: #ddd}
+
+/* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
+.show {display:block;}
+/* 
+.immg {
+  opacity: 1;
+} */
+
+.styles{
+  width: 50%;
+}
+
+.card-height{
+  height: 185px;
+}
+
+/*Task Add animation*/
+:root {
+  --msg-content-height: 26.75em;
+  --msg-width: 50em;
+  --msg-spacing: 1em;
+  --msg1-height: 5.5em;
+}
+
+.msg-send {
+  /* position: absolute; */
+  /* animation-iteration-count: 1;
+  animation-duration: 8s; */
+  position: initial;
+  left:0px;
+  top:0px;
+  animation-fill-mode: forwards;
+}
+
+.msg-receive {
+  /* position: absolute; */
+  /* animation-iteration-count: 1;
+  animation-duration: 8s; */
+  position: initial;
+  left:0px;
+  top:0px;
+  color: #ffffff;
+  animation-fill-mode: forwards;
+}
+
+/* .msg-container {
+  width: 50em;
+} */
+
+.msg-content {
+  height: var(--msg-content-height);
+  width: var(--msg-content-width);
+}
+
+
+/*Animation Names*/
+
+#msg1 {
+  animation-name: msg1;
+}
+
+/* #msg2 {
+  animation-name: msg2;
+}
+
+#msg3 {
+  animation-name: msg3;
+}
+
+#msg4 {
+  animation-name: msg4;
+}
+
+#msg5 {
+  animation-name: msg5;
+}
+
+#msg6 {
+  animation-name: msg6;
+} */
+
+
+/*Key Frames*/
+
+@keyframes msg1 {
+  0% {
+    top: calc(var(--msg-content-height) - var(--msg1-height));
+    left: -4em;
+    transform: scale(0);
+  }
+  5% {
+    top: calc(var(--msg-content-height) - var(--msg1-height));
+    left: 0;
+    transform: scale(1);
+  }
+  12% {
+    top: calc(var(--msg-content-height) - var(--msg1-height));
+  }
+  17% {
+    top: calc(var(--msg-content-height) - var(--msg1-height) - var(--msg-spacing) - var(--msg2-height));
+  }
+  30% {
+    top: calc(var(--msg-content-height) - var(--msg1-height) - var(--msg-spacing) - var(--msg2-height));
+  }
+  35% {
+    top: calc(var(--msg-content-height) - var(--msg1-height) - var(--msg-spacing) - var(--msg2-height) - var(--msg-spacing) - var(--msg3-height));
+  }
+  49% {
+    top: calc(var(--msg-content-height) - var(--msg1-height) - var(--msg-spacing) - var(--msg2-height) - var(--msg-spacing) - var(--msg3-height));
+  }
+  54% {
+    top: calc(var(--msg-content-height) - var(--msg1-height) - var(--msg-spacing) - var(--msg2-height) - var(--msg-spacing) - var(--msg3-height) - var(--msg-spacing) - var(--msg4-height));
+  }
+  70% {
+    top: calc(var(--msg-content-height) - var(--msg1-height) - var(--msg-spacing) - var(--msg2-height) - var(--msg-spacing) - var(--msg3-height) - var(--msg-spacing) - var(--msg4-height));
+  }
+  75% {
+    top: calc(var(--msg-content-height) - var(--msg1-height) - var(--msg-spacing) - var(--msg2-height) - var(--msg-spacing) - var(--msg3-height) - var(--msg-spacing) - var(--msg4-height) - var(--msg-spacing) - var(--msg5-height));
+  }
+  95% {
+    top: calc(var(--msg-content-height) - var(--msg1-height) - var(--msg-spacing) - var(--msg2-height) - var(--msg-spacing) - var(--msg3-height) - var(--msg-spacing) - var(--msg4-height) - var(--msg-spacing) - var(--msg5-height));
+  }
+  100% {
+    top: 0;
+    left: 0;
+  }
+}
+
+/* @keyframes msg2 {
+  0% {
+    top: calc(var(--msg-content-height) - var(--msg2-height));
+    right: 0;
+    transform: scale(0);
+    opacity: 0;
+  }
+  12% {
+    top: calc(var(--msg-content-height) - var(--msg2-height));
+    right: -4em;
+    transform: scale(0);
+  }
+  17% {
+    top: calc(var(--msg-content-height) - var(--msg2-height));
+    right: 0;
+    transform: scale(1);
+    opacity: 1;
+  }
+  30% {
+    top: calc(var(--msg-content-height) - var(--msg2-height));
+  }
+  35% {
+    top: calc(var(--msg-content-height) - var(--msg2-height) - var(--msg-spacing) - var(--msg3-height));
+  }
+  49% {
+    top: calc(var(--msg-content-height) - var(--msg2-height) - var(--msg-spacing) - var(--msg3-height));
+  }
+  54% {
+    top: calc(var(--msg-content-height) - var(--msg2-height) - var(--msg-spacing) - var(--msg3-height) - var(--msg-spacing) - var(--msg4-height));
+  }
+  70% {
+    top: calc(var(--msg-content-height) - var(--msg2-height) - var(--msg-spacing) - var(--msg3-height) - var(--msg-spacing) - var(--msg4-height));
+  }
+  75% {
+    top: calc(var(--msg-content-height) - var(--msg2-height) - var(--msg-spacing) - var(--msg3-height) - var(--msg-spacing) - var(--msg4-height) - var(--msg-spacing) - var(--msg5-height));
+    right: 0;
+  }
+  95% {
+    top: calc(var(--msg-content-height) - var(--msg2-height) - var(--msg-spacing) - var(--msg3-height) - var(--msg-spacing) - var(--msg4-height) - var(--msg-spacing) - var(--msg5-height));
+  }
+  100% {
+    top: calc(var(--msg-content-height) - var(--msg2-height) - var(--msg-spacing) - var(--msg3-height) - var(--msg-spacing) - var(--msg4-height) - var(--msg-spacing) - var(--msg5-height) - var(--msg-spacing) - var(--msg6-height));
+    right: 0;
+  }
+}
+
+@keyframes msg3 {
+  0% {
+    top: calc(var(--msg-content-height) - var(--msg3-height));
+    left: -4em;
+    opacity: 0;
+    transform: scale(0);
+  }
+  30% {
+    top: calc(var(--msg-content-height) - var(--msg3-height));
+    opacity: 0;
+    transform: scale(0);
+  }
+  35% {
+    top: calc(var(--msg-content-height) - var(--msg3-height));
+    left: 0;
+    transform: scale(1);
+    opacity: 1;
+  }
+  49% {
+    top: calc(var(--msg-content-height) - var(--msg3-height));
+  }
+  54% {
+    top: calc(var(--msg-content-height) - var(--msg3-height) - var(--msg-spacing) - var(--msg4-height));
+  }
+  70% {
+    top: calc(var(--msg-content-height) - var(--msg3-height) - var(--msg-spacing) - var(--msg4-height));
+  }
+  75% {
+    top: calc(var(--msg-content-height) - var(--msg3-height) - var(--msg-spacing) - var(--msg4-height) - var(--msg-spacing) - var(--msg5-height));
+    left: 0;
+  }
+  95% {
+    top: calc(var(--msg-content-height) - var(--msg3-height) - var(--msg-spacing) - var(--msg4-height) - var(--msg-spacing) - var(--msg5-height));
+  }
+  100% {
+    top: calc(var(--msg-content-height) - var(--msg3-height) - var(--msg-spacing) - var(--msg4-height) - var(--msg-spacing) - var(--msg5-height) - var(--msg-spacing) - var(--msg6-height));
+    left: 0;
+  }
+}
+
+@keyframes msg4 {
+  0% {
+    top: calc(var(--msg-content-height) - var(--msg4-height));
+    right: -4em;
+    opacity: 0;
+    transform: scale(0);
+  }
+  49% {
+    top: calc(var(--msg-content-height) - var(--msg4-height));
+    right: -4em;
+    opacity: 0;
+    transform: scale(0);
+  }
+  54% {
+    top: calc(var(--msg-content-height) - var(--msg4-height));
+    right: 0;
+    transform: scale(1);
+    opacity: 1;
+  }
+  70% {
+    top: calc(var(--msg-content-height) - var(--msg4-height));
+  }
+  75% {
+    top: calc(var(--msg-content-height) - var(--msg4-height) - var(--msg-spacing) - var(--msg5-height));
+    right: 0;
+  }
+  95% {
+    top: calc(var(--msg-content-height) - var(--msg4-height) - var(--msg-spacing) - var(--msg5-height));
+  }
+  100% {
+    top: calc(var(--msg-content-height) - var(--msg4-height) - var(--msg-spacing) - var(--msg5-height) - var(--msg-spacing) - var(--msg6-height));
+    right: 0;
+  }
+}
+
+@keyframes msg5 {
+  0% {
+    top: calc(var(--msg-content-height) - var(--msg5-height));
+    left: -4em;
+    opacity: 0;
+    transform: scale(0);
+  }
+  70% {
+    top: calc(var(--msg-content-height) - var(--msg5-height));
+    left: -4em;
+    opacity: 0;
+    transform: scale(0);
+  }
+  75% {
+    top: calc(var(--msg-content-height) - var(--msg5-height));
+    left: 0;
+    transform: scale(1);
+    opacity: 1;
+  }
+  95% {
+    top: calc(var(--msg-content-height) - var(--msg5-height));
+  }
+  100% {
+    top: calc(var(--msg-content-height) - var(--msg5-height) - var(--msg-spacing) - var(--msg6-height));
+    left: 0;
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes msg6 {
+  0% {
+    top: calc(var(--msg-content-height) - var(--msg6-height));
+    right: -4em;
+    opacity: 0;
+    transform: scale(0);
+  }
+  95% {
+    top: calc(var(--msg-content-height) - var(--msg6-height));
+    right: 0;
+    opacity: 0;
+    transform: scale(0);
+  }
+  100% {
+    top: calc(var(--msg-content-height) - var(--msg6-height));
+    right: 0em;
+    opacity: 1;
+    transform: scale(1);
+  }
+} */
+
+.card1 {
+  transition: all 235ms ease 0s;
+  box-shadow: 15px 28px 25px -18px rgba(0,0,0,.2);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  border: 2px solid #e6e7e9;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  will-change: transform;
+  word-wrap: break-word;
+}
+.card1:hover {
+  -webkit-transform: translate3d(0,2px,0);
+  transform: translate3d(0,2px,0);
+  box-shadow: 2px 8px 8px -5px rgba(0,0,0,.3)
+}
+.card1 .card1-footer,
+.card1 .card1-header {
+  background-color: rgba(0,0,0,.03);
+  padding: 1rem 1rem;
+}
+.card1 .card1-header {
+  border-bottom: 2px solid #e6e7e9
+}
+.card1 .card1-footer {
+  border-top: 2px solid #e6e7e9
+}
+.card1 .card1-body {
+  flex: 1 1 auto;
+  padding: .2rem;
+  height : auto;
+}
+.card1 .card1-body .card-title,
+.card1 .card1-body h4 {
+  margin-bottom: 0rem;
+  margin-top: 0
+}
+.card1 .card1-body .card1-subtitle,
+.card1 .card1-body h5 {
+  color: #0071de;
+  margin-bottom: 0rem;
+  margin-top: 0
+}
+.card1 .card1-body .card1-text,
+.card1 .card1-body p {
+  margin-bottom: 0rem;
+  margin-top: 0
+}
+.card1 .card1-body .card1-link + .card1-link,
+.card1 .card1-body a + a {
+  margin-left: 0rem
+}
+.card1 .image-bottom,
+.card1 .image-top,
+.card1 img {
+  border: 0;
+  border-radius: 0
+}
+
+
+
+
+.element {
+  animation: pulse 4s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes pulse {
+  0% {
+    background-color: transparent;
+  }
+  100% {
+    background-color: rgb(161, 79, 79);
+  }
+}
+
+.element2 {
+  animation: pulse2 4s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes pulse2 {
+  0% {
+    background-color: rgb(161, 79, 79);
+  }
+  100% {
+    background-color: transparent;
+  }
+}
+
+.bring-front{
+  z-index: -1;
+  position: relative;
+}
+
+.position{
+  position :static;
 }
